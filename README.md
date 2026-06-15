@@ -1,116 +1,75 @@
-# 🚀 IM-02 AI Capacity Forecaster
+🚀 IM-02 AI Capacity Forecaster
 
 An AI-powered capacity forecasting dashboard that predicts future CPU, Memory, and Disk utilization trends using Time Series Forecasting and Anomaly Detection techniques.
 
 The application enables proactive infrastructure monitoring by forecasting future resource usage, detecting anomalies, and identifying capacity risks before they impact system performance.
 
----
-
-# 📌 Problem Statement
+📌 Problem Statement
 
 Organizations need to forecast future capacity utilization and identify anomalies before resource bottlenecks occur.
 
 This solution predicts future utilization trends using AI forecasting techniques and highlights abnormal utilization patterns to support proactive infrastructure planning.
 
----
-
-# ✨ Features
-
-## 📊 AI Forecasting Engine
+✨ Features
+📊 AI Forecasting Engine
 
 Supports multiple forecasting models:
 
-- Prophet Forecasting
-- ARIMA Forecasting
+Prophet Forecasting
+ARIMA Forecasting
 
 Forecasts:
 
-- CPU Usage
-- Memory Usage
-- Disk Usage
-
----
-
-## 🔍 Natural Language Query Interface
+CPU Usage
+Memory Usage
+Disk Usage
+🔍 Natural Language Query Interface
 
 Users can ask:
 
-- When will CPU usage hit 80%?
-- Forecast Memory utilization
-- Predict Disk usage growth
-
----
-
-## 🚨 Anomaly Detection
+When will CPU usage hit 80%?
+Forecast Memory utilization
+Predict Disk usage growth
+🚨 Anomaly Detection
 
 Detects abnormal patterns using statistical logic:
 
-- Threshold breach detection
-- Forecast anomaly detection
-- Risk classification
-
----
-
-## 📈 Interactive Dashboard
+Threshold breach detection
+Forecast anomaly detection
+Risk classification
+📈 Interactive Dashboard
 
 Includes:
 
-- KPI cards
-- Forecast charts
-- AI insights
-- Risk indicators
-- Dataset preview
-- Summary tables
-
----
-
-## 📥 Export Feature
+KPI cards
+Forecast charts
+AI insights
+Risk indicators
+Dataset preview
+Summary tables
+📥 Export Feature
 
 Download forecast results as CSV for reporting and analysis.
 
----
+⭐ Business Value
+Predict future capacity shortages
+Reduce downtime risks
+Improve infrastructure planning
+Detect anomalies early
+Enable proactive decision-making
+Optimize resource usage
+📸 Screenshots
+📊 Dashboard Overview
 
-# ⭐ Business Value
+📈 Prophet Forecast Graph
 
-- Predict future capacity shortages
-- Reduce downtime risks
-- Improve infrastructure planning
-- Detect anomalies early
-- Enable proactive decision-making
-- Optimize resource usage
+📊 Prophet Output
 
----
+📉 ARIMA Forecast Graph
 
-# 📸 Screenshots
+📊 ARIMA Output
 
-## 📊 Dashboard Overview
-![Dashboard](screenshots/Prophet_dashboard.png)
-
----
-
-## 📈 Prophet Forecast Graph
-![Prophet Graph](screenshots/Prophet_graph.png)
-
----
-
-## 📊 Prophet Output
-![Prophet Output](screenshots/Prophet_output.png)
-
----
-
-## 📉 ARIMA Forecast Graph
-![ARIMA Graph](screenshots/ARIMA_graph.png)
-
----
-
-## 📊 ARIMA Output
-![ARIMA Output](screenshots/ARIMA_output.png)
-
----
-
-# 🏗 Architecture
-
-```text
+🏗 Architecture
 CSV Input
    ↓
 Data Validation
@@ -154,7 +113,7 @@ IM-02-Capacity-Forecaster/
 │   ├── Prophet_graph.png
 │   ├── Prophet_output.png
 │   ├── ARIMA_graph.png
-│   ├── ARIMA_output.png
+│   └── ARIMA_output.png
 │
 ├── resumes/
 │   ├── Member1.pdf
@@ -164,7 +123,7 @@ IM-02-Capacity-Forecaster/
 │
 └── outputs/
     └── forecast.csv
-⚙ Installation
+⚙️ Installation
 git clone https://github.com/rekha2756/Capacity_Forecaster.git
 cd Capacity_Forecaster
 pip install -r requirements.txt
@@ -176,9 +135,9 @@ CPU	CPU usage %
 Memory	Memory usage %
 Disk	Disk usage %
 📊 Sample Output
-ds	yhat	anomaly
-2025-05-01	78.4	False
-2025-05-02	82.1	True
+ds         yhat     anomaly
+2025-05-01 78.4     False
+2025-05-02 82.1     True
 🚀 Workflow
 Upload CSV
 Select model (Prophet / ARIMA)
@@ -200,7 +159,7 @@ Risk Analysis
 🧪 Testing
 pytest tests/test_app.py
 
-Test coverage:
+Test coverage includes:
 
 Forecast validation
 Threshold checks
@@ -214,16 +173,6 @@ https://www.loom.com/share/63b136753290416caf0f323d986444c8
 
 https://github.com/rekha2756/Capacity_Forecaster
 
-👥 Team Information
-
-Team Name: Team-5
-
-Members:
-
-P.Sreeja
-G.Rekha
-C.Sindhu
-K.Varshitha
 📦 Deliverables
 Source Code
 README
