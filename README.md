@@ -16,42 +16,38 @@ This solution predicts future utilization trends using AI forecasting techniques
 
 # ✨ Features
 
-## 📊 AI Forecasting
+## 📊 AI Forecasting Engine
 
 Supports multiple forecasting models:
 
-* Prophet Forecasting
-* ARIMA Forecasting
+- Prophet Forecasting
+- ARIMA Forecasting
 
-Forecasts utilization trends for:
+Forecasts:
 
-* CPU Usage
-* Memory Usage
-* Disk Usage
+- CPU Usage
+- Memory Usage
+- Disk Usage
 
 ---
 
 ## 🔍 Natural Language Query Interface
 
-Users can ask questions such as:
+Users can ask:
 
-* When will CPU usage hit 80%?
-* Forecast Memory utilization.
-* Predict Disk usage growth.
-
-The application automatically detects the requested metric and generates forecasts.
+- When will CPU usage hit 80%?
+- Forecast Memory utilization
+- Predict Disk usage growth
 
 ---
 
 ## 🚨 Anomaly Detection
 
-Detects abnormal forecast behavior using statistical analysis.
+Detects abnormal patterns using statistical logic:
 
-Capabilities include:
-
-* Threshold breach detection
-* Forecast anomaly identification
-* Risk categorization
+- Threshold breach detection
+- Forecast anomaly detection
+- Risk classification
 
 ---
 
@@ -59,16 +55,16 @@ Capabilities include:
 
 Includes:
 
-* KPI Cards
-* Dataset Preview
-* Forecast Charts
-* AI Insights
-* Risk Indicators
-* Forecast Summary Tables
+- KPI cards
+- Forecast charts
+- AI insights
+- Risk indicators
+- Dataset preview
+- Summary tables
 
 ---
 
-## 📥 Export Functionality
+## 📥 Export Feature
 
 Download forecast results as CSV for reporting and analysis.
 
@@ -76,91 +72,71 @@ Download forecast results as CSV for reporting and analysis.
 
 # ⭐ Business Value
 
-This solution helps organizations:
-
-* Predict future capacity shortages
-* Reduce downtime risks
-* Improve infrastructure planning
-* Detect abnormal utilization patterns early
-* Support proactive operational decisions
-* Optimize resource allocation
+- Predict future capacity shortages
+- Reduce downtime risks
+- Improve infrastructure planning
+- Detect anomalies early
+- Enable proactive decision-making
+- Optimize resource usage
 
 ---
 
-# 📸 Application Screenshots
+# 📸 Screenshots
 
-## Dashboard Overview
-
-![Dashboard](screenshots/dashboard.png)
-
----
-
-## Forecast Prediction
-
-![Forecast Result](screenshots/forecast_result.png)
+## 📊 Dashboard Overview
+![Dashboard](screenshots/Prophet_dashboard.png)
 
 ---
 
-## Risk Assessment
-
-![Risk Analysis](screenshots/risk_analysis.png)
+## 📈 Prophet Forecast Graph
+![Prophet Graph](screenshots/Prophet_graph.png)
 
 ---
 
-## Forecast Report Download
+## 📊 Prophet Output
+![Prophet Output](screenshots/Prophet_output.png)
 
-![Download Report](screenshots/download_report.png)
+---
+
+## 📉 ARIMA Forecast Graph
+![ARIMA Graph](screenshots/ARIMA_graph.png)
+
+---
+
+## 📊 ARIMA Output
+![ARIMA Output](screenshots/ARIMA_output.png)
 
 ---
 
 # 🏗 Architecture
 
 ```text
-Historical Metrics CSV
-          │
-          ▼
-    Data Validation
-          │
-          ▼
-   Forecast Engine
- (Prophet / ARIMA)
-          │
-          ▼
-  Anomaly Detection
-          │
-          ▼
-   Risk Assessment
-          │
-          ▼
- Interactive Dashboard
-          │
-          ▼
- Forecast Report Export
-```
-
----
-
-# 🛠 Technology Stack
-
-| Layer                | Technology |
-| -------------------- | ---------- |
-| Frontend             | Streamlit  |
-| Forecasting          | Prophet    |
-| Statistical Modeling | ARIMA      |
-| Data Processing      | Pandas     |
-| Numerical Operations | NumPy      |
-| Visualization        | Matplotlib |
-| Testing              | Pytest     |
-| Programming Language | Python     |
-
----
-
-# 📂 Project Structure
-
-```text
+CSV Input
+   ↓
+Data Validation
+   ↓
+Forecast Engine (Prophet / ARIMA)
+   ↓
+Anomaly Detection
+   ↓
+Risk Assessment
+   ↓
+Streamlit Dashboard
+   ↓
+Forecast Export
+🛠 Technology Stack
+Layer	Technology
+Frontend	Streamlit
+Forecasting	Prophet
+Statistical Model	ARIMA
+Data Processing	Pandas
+Numerical Ops	NumPy
+Visualization	Matplotlib
+Testing	Pytest
+Language	Python
+📂 Project Structure
 IM-02-Capacity-Forecaster/
 
-│
 ├── app.py
 ├── requirements.txt
 ├── README.md
@@ -174,302 +150,103 @@ IM-02-Capacity-Forecaster/
 │   └── test_app.py
 │
 ├── screenshots/
-│   ├── dashboard.png
-│   ├── forecast_result.png
-│   ├── risk_analysis.png
-│   └── download_report.png
+│   ├── Prophet_dashboard.png
+│   ├── Prophet_graph.png
+│   ├── Prophet_output.png
+│   ├── ARIMA_graph.png
+│   ├── ARIMA_output.png
 │
 ├── resumes/
-│   ├── Member1_Resume.pdf
-│   ├── Member2_Resume.pdf
-│   ├── Member3_Resume.pdf
-│   └── Member4_Resume.pdf
-│
+│   ├── Member1.pdf
+│   ├── Member2.pdf
+│   ├── Member3.pdf
+│   ├── Member4.pdf
 │
 └── outputs/
     └── forecast.csv
-```
-
----
-
-# ⚙ Installation
-
-## Clone Repository
-
-```bash
+⚙ Installation
 git clone https://github.com/rekha2756/Capacity_Forecaster.git
 cd Capacity_Forecaster
-```
-
-## Install Dependencies
-
-```bash
 pip install -r requirements.txt
-```
-
-## Run Application
-
-```bash
 streamlit run app.py
-```
-
----
-
-# 📄 Input Data Format
-
-The application accepts CSV files containing:
-
-| Column | Description               |
-| ------ | ------------------------- |
-| Date   | Date of metric collection |
-| CPU    | CPU Utilization (%)       |
-| Memory | Memory Utilization (%)    |
-| Disk   | Disk Utilization (%)      |
-
-Example:
-
-```csv
-Date,CPU,Memory,Disk
-2025-01-01,45,55,62
-2025-01-02,47,57,63
-2025-01-03,49,58,65
-```
-
----
-
-# 📊 Sample Output
-
-Forecast Output Example:
-
-| Column  | Description           |
-| ------- | --------------------- |
-| ds      | Forecast Date         |
-| yhat    | Predicted Utilization |
-| anomaly | Anomaly Indicator     |
-
-Example:
-
-```csv
-ds,yhat,anomaly
-2025-05-01,78.4,False
-2025-05-02,82.1,True
-```
-
----
-
-# 🚀 Workflow
-
-### Step 1
-
-Upload historical metrics CSV.
-
-### Step 2
-
-Select forecasting model:
-
-* Prophet
-* ARIMA
-
-### Step 3
-
-Configure threshold percentage.
-
-Example:
-
-```text
-80%
-```
-
-### Step 4
-
-Ask a forecasting question.
-
-Example:
-
-```text
-When will Disk usage hit 80%?
-```
-
-### Step 5
-
-Generate forecast and review results.
-
-The application provides:
-
-* Threshold crossing date
-* Forecast trend
-* Risk category
-* Anomaly alerts
-
----
-
-# 🎯 Risk Classification
-
-| Risk Level     | Condition                                |
-| -------------- | ---------------------------------------- |
-| 🟢 Low Risk    | Forecast remains below threshold         |
-| 🟠 Medium Risk | Forecast approaches threshold            |
-| 🔴 High Risk   | Forecast significantly exceeds threshold |
-
----
-
-# 🤖 AI Capabilities Demonstrated
-
-* Time Series Forecasting
-* Prophet-Based Forecasting
-* ARIMA Statistical Forecasting
-* Predictive Analytics
-* Capacity Planning
-* Resource Utilization Prediction
-* Anomaly Detection
-* Risk Assessment
-* Decision Support Analytics
-
----
-
-# 🧪 Testing
-
-Run all tests:
-
-```bash
-pytest
-```
-
-Or run the specific test file:
-
-```bash
+📄 Input Format
+Column	Description
+Date	Date of metric
+CPU	CPU usage %
+Memory	Memory usage %
+Disk	Disk usage %
+📊 Sample Output
+ds	yhat	anomaly
+2025-05-01	78.4	False
+2025-05-02	82.1	True
+🚀 Workflow
+Upload CSV
+Select model (Prophet / ARIMA)
+Set threshold
+Run forecast
+View insights + download report
+🎯 Risk Levels
+Level	Meaning
+🟢 Low	Safe usage
+🟠 Medium	Approaching threshold
+🔴 High	Exceeds threshold
+🤖 AI Capabilities
+Time Series Forecasting
+Prophet & ARIMA Models
+Capacity Planning
+Anomaly Detection
+Predictive Analytics
+Risk Analysis
+🧪 Testing
 pytest tests/test_app.py
-```
 
-### Test Coverage
+Test coverage:
 
-* Forecast generation validation
-* Threshold breach detection
-* Anomaly detection logic
-* Forecast output verification
-* Data validation checks
-
----
-
-# 📋 Assumptions
-
-* Historical utilization data is available.
-* Data is accurate and chronological.
-* Utilization patterns continue similarly during the forecast horizon.
-* Uploaded CSV contains all required columns.
-
----
-
-# ⚠ Limitations
-
-* Forecast accuracy depends on historical data quality.
-* Sudden external events may affect prediction accuracy.
-* Small datasets may reduce forecasting reliability.
-* ARIMA performance may vary on highly volatile datasets.
-
----
-
-# 📹 Demo Video
-
-Demo Video Link:
+Forecast validation
+Threshold checks
+Anomaly detection
+Output verification
+📹 Demo Video
 
 https://www.loom.com/share/63b136753290416caf0f323d986444c8
 
-The demo includes:
-
-* CSV Upload
-* Forecast Generation
-* Anomaly Detection
-* Risk Assessment
-* Report Download
-
----
-
-# 🔗 GitHub Repository
-
-Public Repository Link:
+🔗 GitHub Repository
 
 https://github.com/rekha2756/Capacity_Forecaster
 
----
+👥 Team Information
 
-# 👥 Team Information
+Team Name: Team-5
 
-### Team Name
+Members:
 
-Team-5
+P.Sreeja
+G.Rekha
+C.Sindhu
+K.Varshitha
+📦 Deliverables
+Source Code
+README
+AI Usage Note
+Prompt Documentation
+Test Cases
+Sample Data
+Screenshots
+Resume PDFs
+Demo Video
+🤝 AI Usage Disclosure
 
-### Team Members
+AI tools were used for:
 
-1. P.Sreeja
-2. G.Rekha
-3. C.Sindhu
-4. K.Varshitha
+UI generation
+Forecasting logic
+ARIMA integration
+Anomaly detection
+Testing
+Documentation
 
----
+All outputs were reviewed and validated by the team.
 
-# 📄 Team Resumes
+📜 License
 
-The resumes of all team members are included in the repository under:
-
-```text
-resumes/
-```
-
-Each resume contains:
-
-* 10th Percentage
-* 12th Percentage
-* Undergraduate Percentage / CGPA
-
----
-
-# 📦 Submission Deliverables
-
-✔ Source Code
-
-✔ Public GitHub Repository
-
-✔ README Documentation
-
-✔ AI Usage Note
-
-✔ Prompt Documentation
-
-✔ Sample Dataset
-
-✔ Test Cases
-
-✔ Team Resumes
-
-✔ Supporting Documents
-
-✔ Demo Video
-
-✔ Forecast Output
-
----
-
-# 🤝 AI Usage Disclosure
-
-AI tools were used during development for:
-
-* Streamlit UI generation
-* Forecasting implementation
-* ARIMA integration
-* Anomaly detection logic
-* Testing support
-* Documentation generation
-* Debugging assistance
-
-All generated outputs were reviewed, modified, tested, and validated by the project team before final submission.
-
----
-
-# 📜 License
-
-This project is intended for academic, educational, and demonstration purposes.
-
----
-
-Developed as part of the AI Capacity Forecasting Challenge.
+This project is for academic and educational purposes only.
