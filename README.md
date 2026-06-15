@@ -1,96 +1,149 @@
-🚀 IM-02 AI Capacity Forecaster
+# 🚀 IM-02 AI Capacity Forecaster
 
-An AI-powered capacity forecasting dashboard that predicts future CPU, Memory, and Disk utilization trends using Time Series Forecasting and Anomaly Detection techniques.
+An AI-powered Streamlit dashboard that forecasts CPU, Memory, and Disk utilization using **Prophet and ARIMA models**, with built-in anomaly detection and risk analysis.
 
-The application enables proactive infrastructure monitoring by forecasting future resource usage, detecting anomalies, and identifying capacity risks before they impact system performance.
+The system helps organizations predict future capacity usage, detect abnormal behavior, and avoid infrastructure bottlenecks.
 
-📌 Problem Statement
+---
 
-Organizations need to forecast future capacity utilization and identify anomalies before resource bottlenecks occur.
+# 📌 Problem Statement
 
-This solution predicts future utilization trends using AI forecasting techniques and highlights abnormal utilization patterns to support proactive infrastructure planning.
+Modern infrastructure systems require proactive capacity planning to avoid performance degradation.
 
-✨ Features
-📊 AI Forecasting Engine
+This project solves this by:
 
-Supports multiple forecasting models:
+- Forecasting resource utilization trends
+- Detecting anomalies in forecast behavior
+- Identifying when thresholds will be breached
+- Providing AI-driven insights for decision-making
 
-Prophet Forecasting
-ARIMA Forecasting
+---
+
+# ✨ Features
+
+## 📊 AI Forecasting Engine
+
+Supports two forecasting models:
+
+- Prophet (time-series forecasting)
+- ARIMA (statistical forecasting)
 
 Forecasts:
 
-CPU Usage
-Memory Usage
-Disk Usage
-🔍 Natural Language Query Interface
+- CPU Usage
+- Memory Usage
+- Disk Usage
 
-Users can ask:
+---
 
-When will CPU usage hit 80%?
-Forecast Memory utilization
-Predict Disk usage growth
-🚨 Anomaly Detection
+## 🔍 AI Query System
 
-Detects abnormal patterns using statistical logic:
+Users can ask natural language questions like:
 
-Threshold breach detection
-Forecast anomaly detection
-Risk classification
-📈 Interactive Dashboard
+- When will CPU usage hit 80%?
+- Predict Disk usage growth
+- Forecast Memory utilization
 
-Includes:
+System automatically detects the metric (CPU / Memory / Disk).
 
-KPI cards
-Forecast charts
-AI insights
-Risk indicators
-Dataset preview
-Summary tables
-📥 Export Feature
+---
 
-Download forecast results as CSV for reporting and analysis.
+## 🚨 Anomaly Detection
 
-⭐ Business Value
-Predict future capacity shortages
-Reduce downtime risks
-Improve infrastructure planning
-Detect anomalies early
-Enable proactive decision-making
-Optimize resource usage
-📸 Screenshots
-📊 Dashboard Overview
+Built-in logic detects abnormal patterns:
 
-📈 Prophet Forecast Graph
+- Rolling mean deviation (Prophet)
+- Statistical deviation (ARIMA)
+- Forecast instability detection
 
-📊 Prophet Output
+---
 
-📉 ARIMA Forecast Graph
+## 📈 Risk Analysis
 
-📊 ARIMA Output
+Automatically classifies system health:
 
-🏗 Architecture
+- 🟢 Low Risk → Safe usage
+- 🟠 Medium Risk → Approaching threshold
+- 🔴 High Risk → Exceeds capacity limit
+
+---
+
+## 📥 Export Feature
+
+Download full forecast results as CSV:
+
+- Forecast dates
+- Predicted values
+- Anomaly flags
+
+---
+
+## 🧠 AI Insights Panel
+
+Provides intelligent explanations for:
+
+- CPU behavior
+- Memory usage patterns
+- Disk growth trends
+- Forecast anomalies
+
+---
+
+# 📸 Screenshots
+
+## Dashboard Overview
+![Dashboard](screenshots/Prophet_dashboard.png)
+
+---
+
+## Prophet Forecast
+![Prophet Graph](screenshots/Prophet_graph.png)
+
+---
+
+## Prophet Output
+![Prophet Output](screenshots/Prophet_output.png)
+
+---
+
+## ARIMA Forecast
+![ARIMA Graph](screenshots/ARIMA_graph.png)
+
+---
+
+## ARIMA Output
+![ARIMA Output](screenshots/ARIMA_output.png)
+
+---
+
+# 🏗 Architecture
+
+```text
 CSV Input
    ↓
 Data Validation
    ↓
-Forecast Engine (Prophet / ARIMA)
+Metric Detection (CPU / Memory / Disk)
+   ↓
+Forecast Engine
+   ├── Prophet Model
+   └── ARIMA Model
    ↓
 Anomaly Detection
    ↓
-Risk Assessment
+Risk Analysis
    ↓
 Streamlit Dashboard
    ↓
-Forecast Export
+CSV Export
 🛠 Technology Stack
 Layer	Technology
 Frontend	Streamlit
 Forecasting	Prophet
 Statistical Model	ARIMA
 Data Processing	Pandas
-Numerical Ops	NumPy
 Visualization	Matplotlib
+ML Support	NumPy
 Testing	Pytest
 Language	Python
 📂 Project Structure
@@ -119,7 +172,7 @@ IM-02-Capacity-Forecaster/
 │   ├── Member1.pdf
 │   ├── Member2.pdf
 │   ├── Member3.pdf
-│   ├── Member4.pdf
+│   └── Member4.pdf
 │
 └── outputs/
     └── forecast.csv
@@ -129,42 +182,49 @@ cd Capacity_Forecaster
 pip install -r requirements.txt
 streamlit run app.py
 📄 Input Format
+
+Upload a CSV file with:
+
 Column	Description
-Date	Date of metric
-CPU	CPU usage %
-Memory	Memory usage %
-Disk	Disk usage %
+Date	Metric date
+CPU	CPU usage (%)
+Memory	Memory usage (%)
+Disk	Disk usage (%)
+
+Example:
+
+Date,CPU,Memory,Disk
+2025-01-01,40,60,70
+2025-01-02,42,62,72
 📊 Sample Output
-ds         yhat     anomaly
-2025-05-01 78.4     False
-2025-05-02 82.1     True
-🚀 Workflow
-Upload CSV
-Select model (Prophet / ARIMA)
+Forecast Date | Predicted Usage | Anomaly
+2025-05-01    | 78.4            | False
+2025-05-02    | 82.1            | True
+🚀 How It Works
+Upload CSV file
+Choose model (Prophet / ARIMA)
+Enter query (CPU / Memory / Disk)
 Set threshold
 Run forecast
-View insights + download report
-🎯 Risk Levels
+View risk + insights
+Download report
+🎯 Risk Classification
 Level	Meaning
-🟢 Low	Safe usage
+🟢 Low	Safe system
 🟠 Medium	Approaching threshold
-🔴 High	Exceeds threshold
-🤖 AI Capabilities
-Time Series Forecasting
-Prophet & ARIMA Models
-Capacity Planning
-Anomaly Detection
-Predictive Analytics
-Risk Analysis
+🔴 High	Capacity risk detected
 🧪 Testing
+
+Run tests:
+
 pytest tests/test_app.py
 
 Test coverage includes:
 
 Forecast validation
-Threshold checks
 Anomaly detection
-Output verification
+Threshold breach logic
+Output structure validation
 📹 Demo Video
 
 https://www.loom.com/share/63b136753290416caf0f323d986444c8
@@ -173,6 +233,14 @@ https://www.loom.com/share/63b136753290416caf0f323d986444c8
 
 https://github.com/rekha2756/Capacity_Forecaster
 
+🤖 AI Capabilities Demonstrated
+Time Series Forecasting
+Prophet & ARIMA Models
+Capacity Planning
+Anomaly Detection
+Risk Analysis
+Predictive Analytics
+Decision Support System
 📦 Deliverables
 Source Code
 README
@@ -187,12 +255,12 @@ Demo Video
 
 AI tools were used for:
 
-UI generation
-Forecasting logic
+Streamlit UI development
+Forecasting logic implementation
 ARIMA integration
-Anomaly detection
-Testing
-Documentation
+Anomaly detection logic
+Test case generation
+Documentation support
 
 All outputs were reviewed and validated by the team.
 
