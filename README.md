@@ -169,10 +169,10 @@ IM-02-Capacity-Forecaster/
 │   └── ARIMA_output.png
 │
 ├── resumes/
-│   ├── Member1.pdf
-│   ├── Member2.pdf
-│   ├── Member3.pdf
-│   └── Member4.pdf
+│   ├── Sreeja_Resume.pdf
+│   ├── Rekha_Resume.pdf
+│   ├── Varshitha_Resume.pdf
+│   └── Sindhu_Resume.pdf
 │
 └── outputs/
     └── forecast.csv
